@@ -1,10 +1,12 @@
 <!--The whole content below can be removed with the new code.-->
 <div class="container">
   <h1>Welecome to this great table app!</h1>
+  <p>Insert graph here</p>
   <div class="row">
     <div class="col-md-6">
       <div class="input-group col-md-12">
-        <input type="text" class="form-control input-lg" placeholder="Enter a value to search for">
+        <input *ngIf="config.filter" [ngTableFiltering]="config.filtering"(tableChanged)="onChangeTable(config)" type="text" class="form-control input-lg" placeholder="search for a company">
+        <!-- IF not available don't search or update -->
         <span class="input-group-btn">
         <button class="btn btn-info btn-lg" type="button">
           <i class="glyphicon glyphicon-search"></i>
@@ -13,6 +15,12 @@
       </div>
     </div>
   </div>
+  <ng-table [config]="config"
+            (tableChanged)="onChangeTable(config)"
+            (cellClicked)="onCellClick($event)"
+            [rows]="rows"
+            [columns]="columns">
+  </ng-table>
   <table class="table">
     <thead>
       <tr>
