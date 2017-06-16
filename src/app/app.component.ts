@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   public rows: Array<any> = [];
   public columns: Array<any> = [
     { title: 'Name', name: 'name', filtering: { filterString: '', placeholder: 'Filter by name' }},
-    { title: 'Revenue', name: 'revenue', sort: false, filtering: { filterString: '', placeHolder: 'Filter by Revenue'}},
+    { title: 'Revenue', name: 'revenue', sort: 'asc', filtering: { filterString: '', placeHolder: 'Filter by Revenue'}},
     { title: 'Year', name: 'year' },
     { title: 'Industry', name: 'industry' }
   ];
