@@ -1,9 +1,21 @@
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <p>implement list view</p>
-  <ul>
-    <li *ngFor="let company of companies">
-      <h4>{{company.name}}</h4>
-    </li>
-  </ul>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Revenue</th>
+      <th>Year</th>
+      <th>Industry</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let company of companies">
+    <tr>
+      <th scope="row">{{company.id}}</th>
+      <td>{{company.name}}</td>
+      <td>{{company.revenue}}</td>
+      <td>{{company.year}}</td>
+      <td>{{company.industry}}</td>
+    </tr>
+  </tbody>
+</table>

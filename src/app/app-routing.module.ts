@@ -7,9 +7,9 @@ const routes: Routes = [
   {
     path: '',
     component: AppComponent,
-    // resolve: {
-    //   company: CompanyResolver
-    // }
+    resolve: {
+      company: CompanyResolver
+    }
   }
 ];
 @NgModule({

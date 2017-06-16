@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { CompanyService } from './_services/index';
-import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 
@@ -14,11 +12,11 @@ export class AppComponent implements OnInit {
 
   private companies: any = { };
 
-  constructor(private route: ActivatedRoute, private cs: CompanyService) {
+  constructor( private cs: CompanyService) {
     this.cs = cs;
  }
 
-  ngOnInit() {
+  ngOnInit() {// this creates an error I don't have time to fix right now.
     console.log("in init");
     this.cs.getCompanies().subscribe(
       data => {
