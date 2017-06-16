@@ -5,16 +5,18 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CompanyService {
-  private baseUrl = 'http://jsapi.makespi.com/companies/revenu';
+  private baseUrl = 'http://jsapi.makespi.com/api/companies/revenue';
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+    this.http = http;
+  }
 
   getCompanies() {
     let params: URLSearchParams = new URLSearchParams();
     params.set('key', '9a63588ce404b2bc7b7d05cb0a470ca3');
-    return this.http.get(this.baseUrl,{
+    return this.http.get(this.baseUrl, {
       search: params
-    }).map((response: Response) => response.json());
+    }).map( (response: Response) => response.json());
   }
   addCompany(company: string, revenue: number, year: number) {
     const params: URLSearchParams = new URLSearchParams();

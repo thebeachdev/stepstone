@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class CompanyResolver implements Resolve<Company> {
 
-  constructor(private cs:CompanyService, private router: Router) { }
+  constructor(private cs: CompanyService, private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
     return this.cs.getCompanies().map(
